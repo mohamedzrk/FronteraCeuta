@@ -1,6 +1,5 @@
 <?php
 // includes/db.php
-// Lee credenciales desde .env (o define aquí directamente)
 $host   = 'localhost';
 $db     = 'ceutadb';
 $user   = 'root';
