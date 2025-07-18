@@ -1,0 +1,117 @@
+/* === Variables & Reset === */
+:root {
+  --clr-bg: #f7f9fc;
+  --clr-white: #ffffff;
+  --clr-dark: #212529;
+  --clr-primary: #1f78d1;
+  --clr-secondary: #17c0eb;
+  --clr-shadow: rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+  --spacing: 1rem;
+  --font: 'Poppins', sans-serif;
+  --transition: 0.3s ease;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--clr-bg);
+  color: var(--clr-dark);
+  line-height: 1.6;
+}
+
+/* Header & Footer siguen igual */
+
+/* === Hero + Mapa === */
+.hero-map {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+#map-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-dark);
+  font-weight: 500;
+}
+.status-overlays {
+  position: absolute;
+  top: var(--spacing);
+  right: var(--spacing);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+.status-card {
+  display: flex;
+  align-items: center;
+  background: var(--clr-white);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px var(--clr-shadow);
+  backdrop-filter: blur(4px);
+  min-width: 150px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.status-card .material-icons {
+  font-size: 2rem;
+  margin-right: 0.75rem;
+  color: var(--clr-primary);
+}
+.status-card h4 {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+.status-card p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.status-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px var(--clr-shadow);
+}
+
+/* === CTA Cards === */
+.cta-cards {
+  display: grid;
+  gap: var(--spacing);
+  padding: var(--spacing) 0;
+}
+.cta-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--clr-white);
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px var(--clr-shadow);
+  text-align: center;
+  text-decoration: none;
+  color: var(--clr-dark);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.cta-card .material-icons {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: var(--clr-secondary);
+}
+.cta-card h3 {
+  font-weight: 500;
+}
+.cta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px var(--clr-shadow);
+}
+
+/* === Responsive === */
+@media (min-width: 600px) {
+  .cta-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
